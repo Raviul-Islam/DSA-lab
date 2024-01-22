@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #define MAXSIZE 5
+
 int front = -1, rear = -1, choice;
 int q[10];
 void qinsert();

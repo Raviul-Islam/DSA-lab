@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <conio.h>
 #define SIZE 20
+
 /**************Function Declaration Begin**********/
+
 void get_elements(int A[], int n);
 void movedown(int pos, int A[], int n);
 void Heap_sort(int A[], int n);
 void show_elements(int A[], int n);
+
 /**************Function Declaration End**********/
+
 void main()
 {
     int n, A[SIZE];
@@ -18,12 +22,18 @@ void main()
     show_elements(A, n);
     getch();
 }
+
 /********** heapify & adjusting element position **********/
+
 /********** Function Definition begins **********/
+
 void movedown(int pos, int A[], int n)
+
 {
+
     int k, r, l, max, temp;
     for (k = pos;;)
+
     {
         l = 2 * k + 1;
         r = l + 1;
@@ -53,6 +63,7 @@ void movedown(int pos, int A[], int n)
     A[max] = temp;
     k = max;
 } /********** Function Definition ends **********/
+
 /*** heap sorting technique *****************/
 /********** Function Definition begins **********/
 void Heap_sort(int A[], int n)
@@ -70,11 +81,15 @@ void Heap_sort(int A[], int n)
         A[i] = temp;
         movedown(0, A, i);
     }
+
 } /********** Function Definition ends **********/
+
 /********** inputting elements **********/
+
 /********** Function Definition begins **********/
 void get_elements(int A[], int n)
 {
+
     int i;
     printf("\n Enter %d elements : \n", n);
     for (i = 0; i < n; i++)
@@ -84,11 +99,16 @@ void get_elements(int A[], int n)
         printf("%d ", A[i]);
     printf("\n");
 }
+
 /********** Function Definition ends **********/
+
 /********** displaying elements **********/
+
 /********** Function Definition begins **********/
 void show_elements(int A[], int n)
+
 {
+
     int i;
     printf("\n Array after sorting : ");
     for (i = 0; i < n; ++i)

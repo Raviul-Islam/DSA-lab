@@ -1,14 +1,19 @@
 #include <stdio.h>
 #include <conio.h>
 #include <malloc.h>
+
 struct node
+
 {
+
     int info;
     struct node *next;
 };
+
 typedef struct node NODE;
 NODE *start;
 void createmptylist(NODE **start)
+
 {
     *start = (NODE *)NULL;
 }
@@ -20,7 +25,9 @@ void traversinorder(NODE *start)
         start = start->next;
     }
 }
+
 void insertatbegin(int item)
+
 {
     NODE *ptr;
     ptr = (NODE *)malloc(sizeof(NODE));
@@ -33,6 +40,7 @@ void insertatbegin(int item)
 }
 void insert_at_end(int item)
 {
+
     NODE *ptr, *loc;
     ptr = (NODE *)malloc(sizeof(NODE));
     ptr->info = item;
@@ -82,8 +90,11 @@ else
     loc->next = (NODE *)NULL;
     free(ptr);
 }
+
 void insert_spe(NODE *start, int item)
+
 {
+
     NODE *ptr, *loc;
     int temp, k;
     for (k = 0, loc = start; k < temp; k++)
@@ -99,43 +110,75 @@ void insert_spe(NODE *start, int item)
     ptr->info = item;
     ptr->next = loc->next;
     ;
+
     loc->next = ptr;
 }
+
 dele_spe(NODE *start)
+
 {
+
     NODE *ptr, *loc;
+
     int temp;
+
     printf("\nEnter the which element do you want to delete\n");
+
     scanf("%d", &temp);
+
     ptr = start;
+
     if (start == NULL)
+
     {
+
         printf("Empty list\n");
+
         return;
     }
+
     else
+
     {
+
         loc = ptr;
+
         while (ptr != NULL)
+
         {
+
             if (ptr->info == temp)
+
             {
+
                 loc->next = ptr->next;
+
                 free(ptr);
+
                 return;
             }
+
             loc = ptr;
+
             ptr = ptr->next;
         }
     }
 }
+
 void main()
+
 {
+
     int choice, item, after;
+
     char ch;
+
     clrscr();
+
     createmptylist(start);
+
     do
+
     {
         printf("1.Insert element at begin \n");
         printf("2. insert element at end positon\n");
@@ -147,45 +190,62 @@ void main()
         printf("8. exit\n");
         printf("enter your choice\n");
         scanf("%d", &choice);
+
         switch (choice)
+
         {
+
         case 1:
             printf("Enter the item\n");
             scanf("%d", &item);
             insertatbegin(item);
             break;
+
         case 2:
             printf("Enter the item\n");
             scanf("%d", &item);
             insert_at_end(item);
             break;
+
         case 3:
             printf("Enter the item\n");
             scanf("%d", &item);
             insert_spe(start, item);
+
             break;
         case 4:
             printf("\ntravers the list\n");
             traversinorder(start);
+
             break;
+
         case 5:
             printf("Delete the item\n");
             dele_beg();
             break;
+
         case 6:
             printf("Delete the element\n");
             dele_end(start);
+
             break;
+
         case 7:
             printf("Delete the element");
             dele_spe(start);
+
             break;
+
         case 8:
             return;
         }
+
         fflush(stdin);
         printf("do your want continous\n");
+
         scanf("%c", &ch);
+
     } while ((ch = 'y') | | (ch = 'y'));
+
     getch();
 }
