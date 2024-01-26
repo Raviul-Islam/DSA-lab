@@ -19,6 +19,7 @@ static int find = 0;
 void main()
 {
     graph G;
+    // clrscr();
     printf("\n\t\t Program shows the traversal of graph using Depth First Search");
     printf("\n\t\t Enter number of nodes in the graph: ");
     scanf("%d", &G.n);
@@ -45,7 +46,7 @@ void main()
             if (!G->visited[k])
                 visit(G, k);
         }
-        printf("\n Adjacency matrix of the graph is \n");
+        printf("\n Adjacency matrix of the grpah is \n");
         for (i = 1; i <= G->n; i++)
         {
             for (k = 1; k <= G->n; k++)

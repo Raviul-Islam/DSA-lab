@@ -45,7 +45,7 @@ void main()
             if (!G->visited[k])
                 visit(G, k);
         }
-        printf("\n Adjacency matrix of the graph is \n");
+        printf("\n Adjacency matrix of the grpah is \n");
         for (i = 1; i <= G->n; i++)
         {
             for (k = 1; k <= G->n; k++)
